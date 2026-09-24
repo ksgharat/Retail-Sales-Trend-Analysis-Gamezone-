@@ -1,41 +1,49 @@
-# GameZone: Data Analysis Portfolio Project
+# GameZone E-Commerce Data Analysis
 
 ## Overview
-Welcome to **GameZone**, my comprehensive personal data analysis project. I developed this project from the ground up to showcase an end-to-end data analytics lifecycle—taking raw, unstructured gaming data and transforming it into polished, actionable business insights and interactive visualizations. 
+This repository contains a comprehensive data analysis of GameZone's e-commerce sales, executed entirely using Advanced Excel. The project demonstrates an end-to-end analytical workflow—from raw data ingestion and structural cleaning to pivot-based aggregation and strategic business reporting—contained within the `gamezone-orders-analysis.xlsx` file.
 
-This repository serves as a demonstration of my ability to solve real-world business problems through structured data analysis, applying industry best practices at every stage of the project.
+## Dataset Highlights
+Based on the cleaned order dataset spanning 2019–2022, the analysis encompasses:
+- **Total Volume:** 21,859 processed and cleaned orders.
+- **Revenue Metrics:** An average order value (USD Price) of $281.41, with individual purchases ranging up to $3,146.88.
+- **Top Performing Products:** 
+  - Nintendo Switch (10,386 units)
+  - 27in 4K gaming monitor (4,723 units)
+  - JBL Quantum 100 Gaming Headset (4,296 units)
 
-## The Analysis Lifecycle
+## Methodology & Frameworks
+This project strictly leverages Advanced Excel techniques, avoiding external coding languages, to showcase native spreadsheet capabilities.
 
-This project is structured around a rigorous data analysis framework, broken down into the following core phases:
+### 1. Data Cleaning & Standardization
+- **Cross-Referencing:** Utilized `VLOOKUP`/`XLOOKUP` functions to map raw country codes to standardized global regions (e.g., matching "DE" to "EMEA").
+- **String Manipulation:** Standardized inconsistent product naming conventions (e.g., consolidating variations of "27in 4K gaming monitor").
+- **Date Formatting:** Corrected misaligned and inconsistent timestamps (`PURCHASE_TS`) into a uniform `PURCHASE_TS_Cleaned` date structure, extracting specific Month and Year columns for time-series analysis.
 
-### 1. Project Scoping & Setup
-Defined the core business objectives for GameZone, focusing on key performance indicators (KPIs) such as player retention, sales performance, and user engagement metrics to ensure the analysis remained highly targeted.
+### 2. Quality Control (Issues Log)
+An embedded **Issues Log** was utilized to track data integrity during the cleaning phase. This includes:
+- Documenting the error type (e.g., missing dates, spelling inconsistencies).
+- Calculating the error magnitude as a percentage of total rows.
+- Logging the chosen resolution (whether the data was corrected via functions or left as-is due to low magnitude).
 
-### 2. Data Cleaning
-Applied a systematic approach to audit, standardize, and prepare the raw GameZone datasets. This involved handling missing player records, formatting dates, removing duplicates, and ensuring complete data integrity before moving into analysis.
+### 3. Analysis & Aggregation
+- Extensive use of **Pivot Tables** to aggregate total revenue, calculate order frequencies, and evaluate product performance across different marketing channels and regions.
+- Calculated custom metrics, such as `Time_to_Ship`, to evaluate operational efficiency between purchase and dispatch dates.
 
-### 3. Exploratory Data Analysis (EDA)
-Conducted deep-dive explorations into the cleaned data to uncover underlying gaming trends, player behavior patterns, and regional sales correlations. This phase was critical for understanding the shape of the data and formulating initial hypotheses.
+### 4. Strategic Reporting (SCAN Framework)
+Business insights were developed using the **SCAN Framework**, documented in the `Insights Log`:
+- **S**takeholder Goals: Identifying the core business question (e.g., 2019-2022 revenue trends).
+- **C**olumns and Coverage: Mapping the specific data points required (USD Price, Purchase Item, Date).
+- **A**ggregates and Anomalies: Identifying maximums, minimums, and outliers across the product lifecycle.
+- **N**arrative and Next Steps: Translating numerical trends into actionable recommendations for product, marketing, and finance managers.
 
-### 4. Generating Business Insights
-Transitioned from technical exploration to strategic business thinking. I translated the raw data and EDA findings into clear, actionable recommendations aimed at improving user engagement and optimizing GameZone's monetization strategies.
+## File Structure
+The `gamezone-orders-analysis.xlsx` workbook is organized into the following distinct sheets for transparency and reproducibility:
+- `orders_uncleaned` & `region_uncleaned`: The raw, initial datasets.
+- ` orders_cleaned` & `region_cleaned`: The transformed data ready for analysis.
+- `Issues Log`: Documentation of data quality fixes.
+- `Pivot_Table` / `Pivot_Table1`: Analytical aggregation models.
+- `Insights Log`: Strategic business findings utilizing the SCAN framework.
 
-### 5. Dashboard Development
-Designed and deployed an interactive, user-friendly dashboard. Using a structured layout framework, the dashboard allows stakeholders to easily explore GameZone's data and grasp the core narrative at a glance without being overwhelmed by metrics.
-
-## Best Practices & Pitfalls Avoided
-Throughout the development of GameZone, I intentionally applied methodologies to avoid common data project mistakes:
-- Grounded all analysis in clear business objectives rather than analyzing data blindly.
-- Built a clean, focused dashboard rather than an overcrowded, confusing interface.
-- Maintained thorough documentation of the entire data cleaning process for reproducibility.
-- Ensured all technical findings were directly tied to real-world business actions.
-
-## Tools & Technologies
-*Note: Update these based on the specific tools you used for the project.*
-- **Data Manipulation:** Python (Pandas, NumPy) / SQL
-- **Visualization:** Tableau / PowerBI
-- **Documentation:** Jupyter Notebooks / Markdown
-
-## Contact
-This project was independently developed to demonstrate my end-to-end data analytics capabilities. Feel free to explore the repository, and reach out if you'd like to discuss the methodology or findings in more detail!
+## Conclusion
+This portfolio project highlights how complex data transformations, rigorous quality tracking, and structured business reporting can be achieved efficiently using native Advanced Excel tools.
